@@ -1,4 +1,5 @@
 # Insta_Grid
-Simulation of Instagram
+Instagram Simulation
 
+Click here: 
 https://viri-skull.github.io/Insta_Grid/
