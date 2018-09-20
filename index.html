@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+    <style>
+        @font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?g39j1b');
+  src:  url('fonts/icomoon.eot?g39j1b#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?g39j1b') format('truetype'),
+    url('fonts/icomoon.woff?g39j1b') format('woff'),
+    url('fonts/icomoon.svg?g39j1b#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-comment:before {
+  content: "\e96b";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+        body{
+            margin: 0;/*no tenga bordes en los costados*/
+            font-family: Arial;
+        }
+        
+        .post-list{
+            display: grid; /*empezar la grilla*/
+            grid-template-columns: repeat(3, minmax(100px, 293px)); /*los 293px, es porque en instagram los tiene*/
+            justify-content: center; /*centrar contenido*/
+            /*separacion entre ellos*/
+            grid-gap: 20px;
+        }
+        .post{
+            cursor: pointer; /*sale la manita*/
+            position: relative; /* de acuerto a overlay*/
+            display: block; /*porque es un ancla*/
+        }
+        .post-image{
+            margin: 0;/*quitar al figure el margen que trae*/
+        }
+        .post-image img{
+            width: 100%; /*ancho del post*/
+            vertical-align: top;
+        }
+        /*donde podemos ver los likes y comentarios*/
+        .post-overlay{
+            background: rgba(0,0,0, .4);
+            position: absolute;
+            left: 0;/*tomo todo el espacio del padre */
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: none;
+            align-items: center;/*alineado vertical*/
+            justify-content: center; /*centrado de forma horizontal*/
+            color: white;
+            text-align: center;
+        }
+        .post:hover .post-overlay{
+            display: flex;
+        }
+        .post-likes,
+        .post-comments{
+            width: 80px;
+            margin: 5px;
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+        }
+        /*menor a tablet*/
+        @media screen and (max-width: 768px){
+            .post-list{
+                grid-gap:  3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="post-list">
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                    <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>
+                    <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu2.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                    <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>
+                    <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu3.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                    <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                   
+                </p>
+            </span>
+        </a>
+        
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu2.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu3.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+        
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu2.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu3.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+        
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu2.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+         <a href="" class="post">
+            <figure class="post-image">
+                <img src="./img/compu3.jpg" alt="">
+            </figure>
+            <span class="post-overlay"><!--Donde aparece la cajita que dice los likes y comments-->
+                <p>
+                     <span class="post-likes"><span class="heart icon-heart" id="heart"> </span>150</span>  
+                     <span class="post-comments"><span class="bubble icon-comment" id="bubble"> </span> 10</span>
+                </p>
+            </span>
+        </a>
+    </section>
+</body>
+</html>
